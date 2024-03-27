@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyFavAnime</string>
+    <string name="search_anime">Search Anime</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
+    <string name="duration_in_minutes">%1$s mins</string>
+    <string name="picture">Picture</string>
+    <string name="score">Score</string>
+    <string name="num_episodes">(%1$s)</string>
+    <string name="num_votes">(%1$s votes)</string>
+    <string name="mediatype">MediaType</string>
+    <string name="num_eps_detail">(%1$s eps)</string>
+    <string name="status">Status</string>
+    <string name="release_date">Release Date</string>
+</resources>
