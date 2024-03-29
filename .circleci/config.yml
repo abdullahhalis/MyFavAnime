@@ -1,11 +1,13 @@
 version: 2.1
  
 orbs:
-  android: circleci/android@0.2.1
+  android: circleci/android@2.5.0
  
 jobs:
   build:
-    executor: android/android
+    docker:
+      - image: cimg/openjdk:17.0.10
+    # executor: android/android
     steps:
       - checkout
       - restore_cache:
