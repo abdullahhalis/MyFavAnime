@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:17.0.10
+      - image: cimg/openjdk:17.0.10-browsers
     # executor: android/android
     steps:
       - checkout
