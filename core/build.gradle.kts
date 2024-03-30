@@ -13,7 +13,7 @@ android {
     defaultConfig {
         minSdk = 24
         buildConfigField("String", "BASE_URL", "\"https://api.myanimelist.net/v2/\"")
-        buildConfigField("String", "CLIENT_ID","\"secret_id\"" ) //TODO change client id
+        buildConfigField("String", "CLIENT_ID","\"3a66b10e47e0572c81e584b69c0f3b5a\"" ) //TODO change client id
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -21,7 +21,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -55,4 +62,8 @@ dependencies {
     //coroutine
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    //encryption
+    implementation("net.zetetic:android-database-sqlcipher:4.5.4")
+    implementation("androidx.sqlite:sqlite-ktx:2.4.0")
 }

@@ -24,7 +24,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -54,5 +61,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation ("androidx.compose.runtime:runtime-livedata:1.6.2") //observeAsState
+    implementation ("androidx.compose.runtime:runtime-livedata:1.6.4") //observeAsState
+
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.10")
 }
